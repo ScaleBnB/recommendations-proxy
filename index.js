@@ -1,11 +1,9 @@
 const nr = require("newrelic");
 const axios = require("axios");
 const express = require("express");
-const morgan = require("morgan");
 const app = express();
 const port = 3004;
 
-app.use(morgan("dev")); // for logging http requests to the terminal
 app.use(express.json()); // for parsing application/json
 app.use(express.urlencoded({ extended: true })); // for parsing application/x-www-form-urlencoded
 app.use(express.static("public")); // for serving static files
