@@ -1,0 +1,15 @@
+config:
+  target: "http://localhost:3004"
+  http:
+    pool: 10
+  phases:
+    - duration: 80
+      arrivalRate: 30
+      rampTo: 1500
+
+  processor: "./my-functions.js"
+scenarios:
+  - flow:
+      - function: "generateRandomData"
+      - get:
+          url: "/listings/{{ listing_id }}/recommendations"
