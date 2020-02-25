@@ -11,7 +11,7 @@ app.use(express.static("public")); // for serving static files
 // Recommendations Proxy Response
 app.get("/listings/:id", (req, res) => {
   axios
-    .get(`http://localhost:3002/listings/${req.params.id}`)
+    .get(`http://35.171.9.121:3002:3002/listings/${req.params.id}`)
     .then(({ data }) => {
       res.json(data);
     })
@@ -22,7 +22,9 @@ app.get("/listings/:id", (req, res) => {
 
 app.get("/listings/:id/recommendations", (req, res) => {
   axios
-    .get(`http://localhost:3002/listings/${req.params.id}/recommendations`)
+    .get(
+      `http://35.171.9.121:3002:3002/listings/${req.params.id}/recommendations`
+    )
     .then(({ data }) => {
       res.json(data);
     })
@@ -33,7 +35,9 @@ app.get("/listings/:id/recommendations", (req, res) => {
 
 app.post("/listings/:id/recommendations", (req, res) => {
   axios
-    .get(`http://localhost:3002/listings/${req.params.id}/recommendations`)
+    .get(
+      `http://35.171.9.121:3002:3002/listings/${req.params.id}/recommendations`
+    )
     .then(({ data }) => {
       res.json(data);
     })
@@ -44,7 +48,9 @@ app.post("/listings/:id/recommendations", (req, res) => {
 
 app.patch("/listings/:id/recommendations", (req, res) => {
   axios
-    .get(`http://localhost:3002/listings/${req.params.id}/recommendations`)
+    .get(
+      `http://35.171.9.121:3002:3002/listings/${req.params.id}/recommendations`
+    )
     .then(({ data }) => {
       res.json(data);
     })
@@ -56,7 +62,7 @@ app.patch("/listings/:id/recommendations", (req, res) => {
 app.delete("/listings/:id/recommendations/:recId", (req, res) => {
   axios
     .get(
-      `http://localhost:3002/listings/${req.params.id}/recommendations/${req.params.recId}`
+      `http://35.171.9.121:3002:3002/listings/${req.params.id}/recommendations/${req.params.recId}`
     )
     .then(({ data }) => {
       res.json(data);
